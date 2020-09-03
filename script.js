@@ -1,25 +1,21 @@
-/*function hej(fNamn, eNamn)
-{
-    var printName = "Hej " + fNamn + " " + eNamn + "!";
-    console.log(printName);
-}
+    let div = document.createElement("div"); //Skapar div 
 
-hej("Jonas", "Romin");
-hej("Kalle", "Karlsson");*/
+    div.innerHTML = '<P>Jonas Romin</P>';//Lägger till <P> med text till DIV
 
-let div = document.createElement("div"); //Skapar div 
-div.innerHTML = '<P>Jonas Romin</P>';//Lägger till <P> med text till DIV
-document.body.appendChild(div); // lägger till div till html body
+    document.body.appendChild(div); // lägger till div till body
 
-let minLista = ["Bygga", "Träna", "Se film", "Padel"]; //min array med 4 saker
+    let div1 = document.createElement("Div1"); // skapar div1 
 
-    for (var i=0; i<minLista.length; i++); //Skriver ut min array
-   
-    let div1 = document.createElement("div"); //skapar ny div "div1"
+    document.body.appendChild(div1); // lägger till div 1 till body 
+
+    let minLista = ['Snickra', 'Tv-spel', 'Padel', 'Träna', 'Se film'];
+
+    let mainPart = document.getElementsByTagName('div1');
     
-
-    div1.innerHTML = '<OL><LI></LI><LI></LI><LI></LI><LI></LI></OL>' + minLista; //bortse från denna
-    document.body.appendChild(div1);
-
-
+    mainPart[0].insertAdjacentHTML('afterbegin', '<ol id="minLista"></ol>');
     
+    let myList = document.getElementById('minLista');
+    
+    for (let i = 0; i < minLista.length; i++) {
+        
+        myList.insertAdjacentHTML('afterend', '<li>' + minLista[i] + '</li>') }
